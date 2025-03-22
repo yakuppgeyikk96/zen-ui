@@ -1,0 +1,196 @@
+// Define CSS custom properties at the :root level
+:root {
+  // Primary colors
+  --ui-primary: #3f51b5;
+  --ui-primary-hover: #303f9f; /* %10 darker */
+  --ui-primary-active: #283593; /* %15 darker */
+  --ui-primary-light: #e8eaf6;
+  
+  --ui-secondary: #f50057;
+  --ui-secondary-hover: #dc004e; /* %10 darker */
+  --ui-secondary-active: #c51162; /* %15 darker */
+  
+  --ui-success: #4caf50;
+  --ui-warning: #ff9800;
+  --ui-error: #f44336;
+  --ui-info: #2196f3;
+
+  // Primary colors with opacity
+  --ui-primary-05: rgba(63, 81, 181, 0.05);
+  --ui-primary-10: rgba(63, 81, 181, 0.1);
+
+  // Neutral colors
+  --ui-gray-50: #fafafa;
+  --ui-gray-100: #f5f5f5;
+  --ui-gray-200: #eeeeee;
+  --ui-gray-300: #e0e0e0;
+  --ui-gray-400: #bdbdbd;
+  --ui-gray-500: #9e9e9e;
+  --ui-gray-600: #757575;
+  --ui-gray-700: #616161;
+  --ui-gray-800: #424242;
+  --ui-gray-900: #212121;
+
+  // Text colors
+  --ui-text-primary: rgba(0, 0, 0, 0.87);
+  --ui-text-secondary: rgba(0, 0, 0, 0.6);
+  --ui-text-disabled: rgba(0, 0, 0, 0.38);
+
+  // Border colors
+  --ui-border-color: var(--ui-gray-500);
+  --ui-border-color-error: var(--ui-error);
+  --ui-border-color-success: var(--ui-success);
+  --ui-border-color-warning: var(--ui-warning);
+  --ui-border-color-info: var(--ui-info);
+
+  // SPACING SYSTEM
+  --ui-spacing-unit: 4px;
+  --ui-spacing-xs: calc(var(--ui-spacing-unit) * 0.5);
+  --ui-spacing-sm: var(--ui-spacing-unit);
+  --ui-spacing-md: calc(var(--ui-spacing-unit) * 2);
+  --ui-spacing-lg: calc(var(--ui-spacing-unit) * 3);
+  --ui-spacing-xl: calc(var(--ui-spacing-unit) * 4);
+  --ui-spacing-xxl: calc(var(--ui-spacing-unit) * 6);
+
+  // TYPOGRAPHY
+  --ui-font-family-base: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --ui-font-family-heading: var(--ui-font-family-base);
+
+  --ui-font-size-xs: 0.75rem;
+  --ui-font-size-sm: 0.875rem;
+  --ui-font-size-md: 1rem;
+  --ui-font-size-lg: 1.25rem;
+  --ui-font-size-xl: 1.5rem;
+  --ui-font-size-xxl: 2rem;
+
+  // Font weights
+  --ui-font-weight-light: 300;
+  --ui-font-weight-regular: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-bold: 700;
+
+  // Line heights
+  --ui-line-height-tight: 1.2;
+  --ui-line-height-base: 1.5;
+  --ui-line-height-relaxed: 1.8;
+
+  // BORDERS & RADIUS
+  --ui-border-radius-sm: 4px;
+  --ui-border-radius-md: 8px;
+  --ui-border-radius-lg: 16px;
+  --ui-border-radius-pill: 9999px;
+
+  --ui-border-width-thin: 1px;
+  --ui-border-width-thick: 2px;
+  --ui-border-width-heavy: 4px;
+
+  // SHADOWS
+  --ui-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --ui-shadow-md: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+  --ui-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+
+  // BREAKPOINTS
+  --ui-breakpoint-xs: 0;
+  --ui-breakpoint-sm: 600px;
+  --ui-breakpoint-md: 960px;
+  --ui-breakpoint-lg: 1280px;
+  --ui-breakpoint-xl: 1920px;
+
+  // Z-INDEX
+  --ui-z-index-dropdown: 1000;
+  --ui-z-index-sticky: 1020;
+  --ui-z-index-fixed: 1030;
+  --ui-z-index-modal-backdrop: 1040;
+  --ui-z-index-modal: 1050;
+  --ui-z-index-popover: 1060;
+  --ui-z-index-tooltip: 1070;
+}
+
+// SCSS variables that use the CSS custom properties
+// These act as a fallback and make it easier to use in SCSS functions
+// COLOR SYSTEM
+$primary: var(--ui-primary);
+$secondary: var(--ui-secondary);
+$success: var(--ui-success);
+$warning: var(--ui-warning);
+$error: var(--ui-error);
+$info: var(--ui-info);
+
+// Neutral colors
+$gray-50: var(--ui-gray-50);
+$gray-100: var(--ui-gray-100);
+$gray-200: var(--ui-gray-200);
+$gray-300: var(--ui-gray-300);
+$gray-400: var(--ui-gray-400);
+$gray-500: var(--ui-gray-500);
+$gray-600: var(--ui-gray-600);
+$gray-700: var(--ui-gray-700);
+$gray-800: var(--ui-gray-800);
+$gray-900: var(--ui-gray-900);
+
+// Text colors
+$text-primary: var(--ui-text-primary);
+$text-secondary: var(--ui-text-secondary);
+$text-disabled: var(--ui-text-disabled);
+
+// SPACING SYSTEM
+$spacing-unit: var(--ui-spacing-unit);
+$spacing-xs: var(--ui-spacing-xs);
+$spacing-sm: var(--ui-spacing-sm);
+$spacing-md: var(--ui-spacing-md);
+$spacing-lg: var(--ui-spacing-lg);
+$spacing-xl: var(--ui-spacing-xl);
+$spacing-xxl: var(--ui-spacing-xxl);
+
+// TYPOGRAPHY
+$font-family-base: var(--ui-font-family-base);
+$font-family-heading: var(--ui-font-family-heading);
+
+$font-size-xs: var(--ui-font-size-xs);
+$font-size-sm: var(--ui-font-size-sm);
+$font-size-md: var(--ui-font-size-md);
+$font-size-lg: var(--ui-font-size-lg);
+$font-size-xl: var(--ui-font-size-xl);
+$font-size-xxl: var(--ui-font-size-xxl);
+
+// Font weights
+$font-weight-light: var(--ui-font-weight-light);
+$font-weight-regular: var(--ui-font-weight-regular);
+$font-weight-medium: var(--ui-font-weight-medium);
+$font-weight-bold: var(--ui-font-weight-bold);
+
+// Line heights
+$line-height-tight: var(--ui-line-height-tight);
+$line-height-base: var(--ui-line-height-base);
+$line-height-relaxed: var(--ui-line-height-relaxed);
+
+// BORDERS & RADIUS
+$border-radius-sm: var(--ui-border-radius-sm);
+$border-radius-md: var(--ui-border-radius-md);
+$border-radius-lg: var(--ui-border-radius-lg);
+$border-radius-pill: var(--ui-border-radius-pill);
+
+$border-width-thin: var(--ui-border-width-thin);
+$border-width-thick: var(--ui-border-width-thick);
+$border-width-heavy: var(--ui-border-width-heavy);
+
+// SHADOWS
+$shadow-sm: var(--ui-shadow-sm);
+$shadow-md: var(--ui-shadow-md);
+$shadow-lg: var(--ui-shadow-lg);
+
+// BREAKPOINTS
+$breakpoint-xs: var(--ui-breakpoint-xs);
+$breakpoint-sm: var(--ui-breakpoint-sm);
+$breakpoint-md: var(--ui-breakpoint-md);
+$breakpoint-lg: var(--ui-breakpoint-lg);
+$breakpoint-xl: var(--ui-breakpoint-xl);
+
+// Z-INDEX
+$z-index-dropdown: var(--ui-z-index-dropdown);
+$z-index-sticky: var(--ui-z-index-sticky);
+$z-index-fixed: var(--ui-z-index-fixed);
+$z-index-modal-backdrop: var(--ui-z-index-modal-backdrop);
+$z-index-modal: var(--ui-z-index-modal);
+$z-index-popover: var(--ui-z-index-popover);
+$z-index-tooltip: var(--ui-z-index-tooltip);

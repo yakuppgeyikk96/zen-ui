@@ -1,0 +1,61 @@
+@use "./variables" as *;
+
+// Media queries için mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: ($breakpoint-sm - 1px)) { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Flex box mixin'leri
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Geçiş (transition) mixin'i
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Typography styles
+@mixin typography($size, $weight: $font-weight-regular, $line-height: $line-height-base) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+// Focus styles
+@mixin focus-ring {
+  outline-width: 1px;
+  outline-color: $primary;
+  box-shadow: 0 0 0 3px rgba($primary, 0.4);
+}
+
+@mixin focus-ring-error {
+  outline-width: 2px;
+  outline-color: $error;
+}
+

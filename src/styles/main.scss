@@ -1,0 +1,25 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base styles
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-md;
+  line-height: $line-height-base;
+  color: $text-primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+}
+
+// Component imports will be added here as they are created

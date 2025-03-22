@@ -1,0 +1,180 @@
+// src/components/atoms/Button/Button.scss
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-spacing-sm);
+  border: none;
+  border-radius: var(--ui-border-radius-sm);
+  cursor: pointer;
+  font-family: var(--ui-font-family-base);
+  font-weight: var(--ui-font-weight-medium);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  @include transition;
+  
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  // Icon styles
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  &__text {
+    display: inline-block;
+  }
+
+  // Icon positioning
+  &--with-icon {
+    &.ui-button--icon-left {
+      .ui-button__icon {
+        margin-right: var(--ui-spacing-xs);
+      }
+    }
+
+    &.ui-button--icon-right {
+      .ui-button__icon {
+        margin-left: var(--ui-spacing-xs);
+      }
+    }
+  }
+
+  // Adjust icon size based on button size
+  &--small {
+    .ui-button__icon {
+      font-size: calc(var(--ui-font-size-sm) * 1.2);
+      
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  
+  &--medium {
+    .ui-button__icon {
+      font-size: calc(var(--ui-font-size-md) * 1.2);
+      
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  
+  &--large {
+    .ui-button__icon {
+      font-size: calc(var(--ui-font-size-lg) * 1.2);
+      
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  
+  // Size variants
+  &--small {
+    padding: var(--ui-spacing-xs) var(--ui-spacing-md);
+    font-size: var(--ui-font-size-sm);
+    height: 32px;
+  }
+  
+  &--medium {
+    padding: var(--ui-spacing-sm) var(--ui-spacing-lg);
+    font-size: var(--ui-font-size-md);
+    height: 40px;
+  }
+  
+  &--large {
+    padding: var(--ui-spacing-md) var(--ui-spacing-xl);
+    font-size: var(--ui-font-size-lg);
+    height: 48px;
+  }
+  
+  // Variant styles
+  &--primary {
+    background-color: var(--ui-primary);
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: var(--ui-primary-hover);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--ui-primary-active);
+    }
+  }
+  
+  &--secondary {
+    background-color: var(--ui-secondary);
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: var(--ui-secondary-hover);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--ui-secondary-active);
+    }
+  }
+  
+  &--outlined {
+    background-color: transparent;
+    color: var(--ui-primary);
+    border: var(--ui-border-width-thin) solid var(--ui-primary);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--ui-primary-05);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--ui-primary-10);
+    }
+  }
+  
+  &--text {
+    background-color: transparent;
+    color: var(--ui-primary);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--ui-primary-05);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--ui-primary-10);
+    }
+  }
+
+  &--shadow-none {
+    box-shadow: none;
+  }
+
+  &--shadow-sm {
+    box-shadow: var(--ui-shadow-sm);
+  }
+
+  &--shadow-md {
+    box-shadow: var(--ui-shadow-md);
+  }
+
+  &--shadow-lg {
+    box-shadow: var(--ui-shadow-lg);
+  }
+
+  // Full width
+  &--full-width {
+    width: 100%;
+  }
+}

@@ -1,0 +1,130 @@
+@use '../../../styles/mixins' as *;
+
+.ui-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-spacing-sm);
+  max-width: 20rem;
+
+  label {
+    @include typography(
+      var(--ui-font-size-sm), var(--ui-font-weight-medium), var(--ui-line-height-sm)
+    );
+  }
+  
+  &--full-width {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ui-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: var(--ui-border-radius-sm);
+  
+    &--border-radius-none {
+      border-radius: 0;
+    }
+
+    &--border-radius-small {
+      border-radius: var(--ui-border-radius-sm);
+    }
+
+    &--border-radius-medium {
+      border-radius: var(--ui-border-radius-md);
+    }
+
+    &--border-radius-large {
+      border-radius: var(--ui-border-radius-lg);
+    }
+  
+    &--error {
+      border-width: var(--ui-border-width-thin);
+      border-color: var(--ui-error) !important;
+      
+      &:focus {
+        outline-color: var(--ui-error);
+        box-shadow: 0 0 0 2px rgba(var(--ui-error-rgb), 0.2);
+      }
+    }
+  
+    &:focus-within {
+      border-color: var(--ui-primary);
+      border-width: var(--ui-border-width-thick);
+    }
+    
+    input {
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 0.5rem;
+      background: transparent;
+    }
+    
+    &__start-adornment,
+    &__end-adornment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.5rem;
+      color: var(--ui-text-secondary);
+      
+      min-width: 2.5rem;
+      max-width: auto;
+    }
+    
+    &__start-adornment {
+      padding-left: 0.75rem;
+    }
+    
+    &__end-adornment {
+      padding-right: 0.75rem;
+    }
+  
+    &--small {
+      height: 32px;
+      
+      input {
+        font-size: var(--ui-font-size-sm);
+      }
+      
+      .ui-input__start-adornment,
+      .ui-input__end-adornment {
+        font-size: var(--ui-font-size-sm);
+      }
+    }
+    
+    &--medium {
+      height: 40px;
+      
+      input {
+        font-size: var(--ui-font-size-md);
+      }
+    }
+    
+    &--large {
+      height: 48px;
+      
+      input {
+        font-size: var(--ui-font-size-lg);
+      }
+    }
+  }
+  
+  .ui-input--outlined {
+    border: var(--ui-border-width-thin) solid var(--ui-border-color);
+  }
+
+  .ui-input--filled {
+    border-bottom: var(--ui-border-width-heavy) solid var(--ui-gray-300);
+    background-color: var(--ui-gray-200);
+
+    &:focus-within {
+      border-bottom: var(--ui-border-width-heavy) solid var(--ui-primary);
+    }
+  }
+}
