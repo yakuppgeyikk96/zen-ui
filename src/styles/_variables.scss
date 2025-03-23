@@ -79,6 +79,7 @@
   --ui-border-radius-md: 8px;
   --ui-border-radius-lg: 16px;
   --ui-border-radius-pill: 9999px;
+  --ui-border-radius-circle: 50%;
 
   --ui-border-width-thin: 1px;
   --ui-border-width-thick: 2px;
@@ -104,6 +105,16 @@
   --ui-z-index-modal: 1050;
   --ui-z-index-popover: 1060;
   --ui-z-index-tooltip: 1070;
+
+  // RADIO SIZE
+  --ui-radio-size-small: 14px;
+  --ui-radio-size-medium: 16px;
+  --ui-radio-size-large: 20px;
+
+  // CHECKBOX SIZE
+  --ui-checkbox-size-small: 14px;
+  --ui-checkbox-size-medium: 16px;
+  --ui-checkbox-size-large: 20px;
 }
 
 // SCSS variables that use the CSS custom properties

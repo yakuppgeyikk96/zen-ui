@@ -59,3 +59,20 @@
   outline-color: $error;
 }
 
+@mixin translateToCenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin border($color: $border-color, $width: $border-width) {
+  border: $width solid $color;
+}
+
+@mixin border-bottom($color: $border-color, $width: $border-width) {
+  border-bottom: $width solid $color;
+}
+
+@mixin border-right($color: $border-color, $width: $border-width) {
+  border-right: $width solid $color;
+}

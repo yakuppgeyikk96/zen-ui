@@ -1,6 +1,12 @@
 import { forwardRef, useId, useState } from "react";
+import {
+  InputBorderRadius,
+  InputSize,
+  InputVariant,
+  TextInputType,
+} from "./types";
+
 import "./Input.scss";
-import { InputBorderRadius, InputSize, InputType, InputVariant } from "./types";
 
 export interface BaseInputProps {
   id?: string;
@@ -22,7 +28,7 @@ export interface BaseInputProps {
   endAdornment?: React.ReactNode;
   variant?: InputVariant;
   borderRadius?: InputBorderRadius;
-  type?: Partial<InputType>;
+  type?: TextInputType | "number" | "checkbox" | "radio";
   min?: number;
   max?: number;
   step?: number;

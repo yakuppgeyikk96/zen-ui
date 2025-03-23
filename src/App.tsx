@@ -18,11 +18,16 @@ function App() {
     >
       <form>
         <Input
+          name="text"
+          label="This is a text input"
+          type="checkbox"
+          placeholder="This is a text input"
+        />
+        <Input
           name="checkbox"
           label="Is this a checkbox?"
           type="checkbox"
           placeholder="Is this a checkbox?"
-          size="large"
           onChange={(e) => {
             console.log(e.target.value);
           }}
@@ -30,17 +35,17 @@ function App() {
             console.log(value);
           }}
         />
-        <br />
 
         <Input
           name="radio"
           label="Is this a radio?"
           type="radio"
           placeholder="Is this a radio?"
-          size="large"
+          onInputChange={(name, value) => {
+            console.log(name, value);
+          }}
         />
 
-        <br />
         <Button
           variant="primary"
           type="submit"

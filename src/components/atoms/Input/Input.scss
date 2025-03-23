@@ -39,16 +39,6 @@
       border-radius: var(--ui-border-radius-lg);
     }
   
-    &--error {
-      border-width: var(--ui-border-width-thin);
-      border-color: var(--ui-error) !important;
-      
-      &:focus {
-        outline-color: var(--ui-error);
-        box-shadow: 0 0 0 2px rgba(var(--ui-error-rgb), 0.2);
-      }
-    }
-  
     &:focus-within {
       border-color: var(--ui-primary);
       border-width: var(--ui-border-width-thick);
@@ -107,6 +97,17 @@
       }
     }
   }
+
+  .ui-input--error {
+    border-color: var(--ui-error) !important;
+    border-width: var(--ui-border-width-thin) !important;
+  }
+
+  .ui-input__error-message {
+    color: var(--ui-error);
+    font-size: var(--ui-font-size-sm);
+    margin: var(--ui-spacing-xs) 0;
+  } 
   
   .ui-input--outlined {
     border: var(--ui-border-width-thin) solid var(--ui-border-color);

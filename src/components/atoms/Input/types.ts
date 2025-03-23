@@ -58,9 +58,11 @@ export type CheckboxSpecificProps = InputCommonProps & {
 };
 
 export type RadioSpecificProps = InputCommonProps & {
+  name: string;
   type: "radio";
   checked?: boolean;
   defaultChecked?: boolean;
+  onInputChange?: (name: string, value: boolean) => void;
 };
 
 export type InputProps =

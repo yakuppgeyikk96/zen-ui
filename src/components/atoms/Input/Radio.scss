@@ -1,8 +1,9 @@
-/* Radio.scss */
+@use "../../../styles/mixins" as mixins;
+
 .ui-radio-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .ui-radio-label {
@@ -12,45 +13,114 @@
 }
 
 .ui-radio {
-  margin-right: 0.5rem;
+  @include mixins.flex(row, center, center);
+  @include mixins.transition(all, 0.2s, ease);
+
+  position: relative;
+  margin-left: var(--ui-spacing-sm);
+  margin-right: var(--ui-spacing-md);
+  border-radius: var(--ui-border-radius-circle);
+  border: var(--ui-border-width-thin) solid var(--ui-border-color);
+  background-color: var(--ui-radio-background-color);
   
   &--small {
-    width: 14px;
-    height: 14px;
+    width: var(--ui-radio-size-small);
+    height: var(--ui-radio-size-small);
+
+    & ~ .ui-radio-text {
+      font-size: var(--ui-font-size-xs);
+    }
   }
   
   &--medium {
-    width: 16px;
-    height: 16px;
+    width: var(--ui-radio-size-medium);
+    height: var(--ui-radio-size-medium);
+
+    & ~ .ui-radio-text {
+      font-size: var(--ui-font-size-sm);
+    }
   }
   
   &--large {
-    width: 20px;
-    height: 20px;
+    width: var(--ui-radio-size-large);
+    height: var(--ui-radio-size-large);
+
+    & ~ .ui-radio-text {
+      font-size: var(--ui-font-size-md);
+    }
+  }
+  
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .ui-radio-checkmark {
+    @include mixins.translateToCenter;
+    @include mixins.transition(all, 0.2s, ease);
+
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: var(--ui-border-radius-circle);
+    background-color: var(--ui-primary);
+  }
+  
+  &--checked {
+    border-color: var(--ui-primary);
+    
+    .ui-radio-checkmark {
+      width: 10px;
+      height: 10px;
+    }
+    
+    &.ui-radio--small .ui-radio-checkmark {
+      width: 6px;
+      height: 6px;
+    }
+    
+    &.ui-radio--large .ui-radio-checkmark {
+      width: 12px;
+      height: 12px;
+    }
   }
   
   &--disabled {
-    cursor: not-allowed;
     opacity: 0.6;
+    cursor: not-allowed;
+    
+    input {
+      cursor: not-allowed;
+    }
+    
+    .ui-radio-text {
+      opacity: 0.6;
+    }
   }
   
   &--error {
-    border-color: red;
+    border-color: var(--ui-error);
+  }
+  
+  input:focus {
+    outline: none;
   }
 }
 
-.ui-radio-text {
-  font-size: 14px;
-}
-
 .ui-radio__error-message {
-  color: red;
-  font-size: 12px;
-  margin-top: 4px;
+  @include mixins.flex(column, start, start);
+  color: var(--ui-error);
+  font-size: var(--ui-font-size-sm);
+  margin: var(--ui-spacing-xs) 0;
 }
 
 .ui-radio__helper-text {
-  color: #666;
-  font-size: 12px;
-  margin-top: 4px;
+  color: var(--ui-text-color);
+  font-size: var(--ui-font-size-sm);
+  margin: var(--ui-spacing-sm);
 }

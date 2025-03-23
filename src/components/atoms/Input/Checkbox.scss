@@ -1,32 +1,70 @@
-/* Checkbox.scss */
+@use "../../../styles/mixins" as mixins;
+
 .ui-checkbox-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
+  @include mixins.flex(column, center, start);
+  margin-bottom: var(--ui-spacing-md);
 }
 
 .ui-checkbox-label {
-  display: flex;
-  align-items: center;
+  @include mixins.flex(row, center, center);
   cursor: pointer;
 }
 
 .ui-checkbox {
-  margin-right: 0.5rem;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-right: var(--ui-spacing-md);
+  background-color: var(--ui-gray-50);
+  cursor: pointer;
+
+  @include mixins.border(var(--ui-border-color), var(--ui-border-width-thin));
+  border-radius: var(--ui-border-radius-sm);
+  
+  &:checked {
+    background-color: var(--ui-primary);
+    border-color: var(--ui-primary);
+    @include mixins.transition(background-color, 0.3s, ease);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 45%;
+      height: 80%;
+      @include mixins.border-bottom(white, var(--ui-border-width-thick));
+      @include mixins.border-right(white, var(--ui-border-width-thick));
+    }
+  }
   
   &--small {
-    width: 14px;
-    height: 14px;
+    width: var(--ui-checkbox-size-small);
+    height: var(--ui-checkbox-size-small);
+
+    & ~ .ui-checkbox-text {
+      font-size: var(--ui-font-size-xs);
+    }
   }
   
   &--medium {
-    width: 16px;
-    height: 16px;
+    width: var(--ui-checkbox-size-medium);
+    height: var(--ui-checkbox-size-medium);
+
+    & ~ .ui-checkbox-text {
+      font-size: var(--ui-font-size-sm);
+    }
   }
   
   &--large {
-    width: 20px;
-    height: 20px;
+    width: var(--ui-checkbox-size-large);
+    height: var(--ui-checkbox-size-large);
+
+    & ~ .ui-checkbox-text {
+      font-size: var(--ui-font-size-md);
+    }
   }
   
   &--disabled {
@@ -35,22 +73,23 @@
   }
   
   &--error {
-    border-color: red;
+    border-color: var(--ui-error);
   }
 }
 
 .ui-checkbox-text {
-  font-size: 14px;
+  font-size: var(--ui-font-size-sm);
 }
 
 .ui-checkbox__error-message {
-  color: red;
-  font-size: 12px;
-  margin-top: 4px;
+  @include mixins.flex(column, start, start);
+  color: var(--ui-error);
+  font-size: var(--ui-font-size-sm);
+  margin-top: var(--ui-spacing-xs);
 }
 
 .ui-checkbox__helper-text {
-  color: #666;
-  font-size: 12px;
-  margin-top: 4px;
+  color: var(--ui-text-color);
+  font-size: var(--ui-font-size-sm);
+  margin-top: var(--ui-spacing-xs);
 }

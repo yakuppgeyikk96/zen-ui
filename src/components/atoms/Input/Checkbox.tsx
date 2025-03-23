@@ -80,7 +80,13 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxSpecificProps>(
           {label && <span className="ui-checkbox-text">{label}</span>}
         </label>
 
-        {error && <p className="ui-checkbox__error-message">{error}</p>}
+        {error && Array.isArray(error) && (
+          <p className="ui-checkbox__error-message">
+            {error.map((err) => (
+              <span key={err}>{err}</span>
+            ))}
+          </p>
+        )}
 
         {helperText && <p className="ui-checkbox__helper-text">{helperText}</p>}
       </div>
