@@ -1,0 +1,56 @@
+/* Checkbox.scss */
+.ui-checkbox-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.ui-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ui-checkbox {
+  margin-right: 0.5rem;
+  
+  &--small {
+    width: 14px;
+    height: 14px;
+  }
+  
+  &--medium {
+    width: 16px;
+    height: 16px;
+  }
+  
+  &--large {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  &--error {
+    border-color: red;
+  }
+}
+
+.ui-checkbox-text {
+  font-size: 14px;
+}
+
+.ui-checkbox__error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.ui-checkbox__helper-text {
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+}

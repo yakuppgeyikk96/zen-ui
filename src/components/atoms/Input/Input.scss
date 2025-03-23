@@ -70,20 +70,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 0.5rem;
+      padding: 0 0.25rem;
       color: var(--ui-text-secondary);
       
       min-width: 2.5rem;
       max-width: auto;
     }
     
-    &__start-adornment {
-      padding-left: 0.75rem;
-    }
-    
-    &__end-adornment {
-      padding-right: 0.75rem;
-    }
   
     &--small {
       height: 32px;
